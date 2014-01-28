@@ -156,9 +156,6 @@
                     {block:Text}
                         {block:Title}{Title}{/block:Title}
                     {/block:Text}                                
-                    {block:Photo}
-                        {block:Caption}{Caption}{/block:Caption}
-                    {/block:Photo}
                     {block:Photoset}
                         {block:Caption}{Caption}{/block:Caption}
                     {/block:Photoset}
@@ -171,12 +168,6 @@
                     {block:Chat}
                         {block:Title}{Title}{/block:Title}
                     {/block:Chat}
-                    {block:Audio}
-                        {block:Caption}{Caption}{/block:Caption}
-                    {/block:Audio}   
-                    {block:Video}
-                        {block:Caption}{Caption}{/block:Caption}
-                    {/block:Video}
                     {block:Answer}
                         {Answer}
                     {/block:Answer}
@@ -191,6 +182,7 @@
                     {/block:Text}                    
                     {block:Photo}
                         <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                        {block:Caption}{Caption}{/block:Caption}
                     {/block:Photo}
                     {block:Photoset}
                         {Photoset-500}
@@ -209,9 +201,11 @@
                     {/block:AudioPlayer}
                     {block:AudioEmbed}
                         {AudioEmbed-250}
+                        {block:Caption}{Caption}{/block:Caption}
                     {/block:AudioEmbed} 
                     {block:Video}
                         {Video-500}
+                        {block:Caption}{Caption}{/block:Caption}
                     {/block:Video}                    
                     {block:Answer}
                         {Asker}: {Question}
