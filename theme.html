@@ -75,9 +75,12 @@
         .post .main p {    
             margin-bottom: 15px;
             width: 500px;
-        }     
+        }
+        .post .main p.maths {
+            display: block; 
+            margin-bottom: 0;
+        }       
         .post .main img {
-            margin-bottom: 15px;
             vertical-align: bottom;
             width: 500px;
         }
@@ -98,12 +101,20 @@
             vertical-align: middle;
         }
         #footer {
+            float: left;
             font-family: sans-serif;
             list-style-type: none;
+            margin: 35px 0 50px 0;
+        }
+        #footer #search {
+            display: block;
+            margin: 0 0 15px 0;
+            width: 100%;
         }
         #footer li {
             display: inline-block;
             line-height: 20px;
+            margin-right: 10px;
         }
         .cf:before,
         .cf:after {
@@ -156,6 +167,9 @@
                     {block:Text}
                         {block:Title}{Title}{/block:Title}
                     {/block:Text}                                
+                    {block:Photo}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Photo}
                     {block:Photoset}
                         {block:Caption}{Caption}{/block:Caption}
                     {/block:Photoset}
@@ -168,6 +182,12 @@
                     {block:Chat}
                         {block:Title}{Title}{/block:Title}
                     {/block:Chat}
+                    {block:Audio}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Audio}   
+                    {block:Video}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Video}
                     {block:Answer}
                         {Answer}
                     {/block:Answer}
@@ -182,7 +202,6 @@
                     {/block:Text}                    
                     {block:Photo}
                         <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                        {block:Caption}{Caption}{/block:Caption}
                     {/block:Photo}
                     {block:Photoset}
                         {Photoset-500}
@@ -201,11 +220,9 @@
                     {/block:AudioPlayer}
                     {block:AudioEmbed}
                         {AudioEmbed-250}
-                        {block:Caption}{Caption}{/block:Caption}
                     {/block:AudioEmbed} 
                     {block:Video}
                         {Video-500}
-                        {block:Caption}{Caption}{/block:Caption}
                     {/block:Video}                    
                     {block:Answer}
                         {Asker}: {Question}
@@ -234,18 +251,18 @@
         {/block:Posts}
         {block:Pagination}  
             <ul id="footer">
-                <li>
-                    <form id="search" action="/search" method="get">    
+                <li id="search">
+                    <form action="/search" method="get">    
                         <input type="text" id="searchfield" name="q" value="{SearchQuery}" placeholder="{text:Search Field Text}">
                         <input type="submit" id="searchbutton">
                     </form>
                 </li>                   
                 {block:PreviousPage}
-                    <li><a href="{PreviousPage}" title="Previous">&larr;</a></li>
+                    <li><a href="{PreviousPage}" title="Previous">Previous</a></li>
                 {/block:PreviousPage}
                     <li><a href="">{CurrentPage}</a></li>
                 {block:NextPage}
-                    <li><a href="{NextPage}" title="Next">&rarr;</a></li>
+                    <li><a href="{NextPage}" title="Next">Next</a></li>
                 {/block:NextPage}                               
             </ul>    
         {/block:Pagination}   
