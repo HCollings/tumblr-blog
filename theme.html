@@ -79,9 +79,8 @@
         .post .main p.maths {
             display: block; 
             margin-bottom: 0;
-        }       
+        }
         .post .main img {
-            margin-bottom: 15px;
             vertical-align: bottom;
             width: 500px;
         }
@@ -102,12 +101,20 @@
             vertical-align: middle;
         }
         #footer {
+            float: left;
             font-family: sans-serif;
             list-style-type: none;
+            margin: 35px 0 50px 0;
+        }
+        #footer #search {
+            display: block;
+            margin: 0 0 15px 0;
+            width: 100%;
         }
         #footer li {
             display: inline-block;
             line-height: 20px;
+            margin-right: 10px;
         }
         .cf:before,
         .cf:after {
@@ -123,8 +130,7 @@
         /* Custom */
         {CustomCSS}
         </style>
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>  
-
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
     </head>
     <body>
         <h1><a href="/" title="{Title}">{Title}</a></h1>
@@ -246,21 +252,20 @@
         {/block:Posts}
         {block:Pagination}  
             <ul id="footer">
-                <li>
-                    <form id="search" action="/search" method="get">    
+                <li id="search">
+                    <form action="/search" method="get">    
                         <input type="text" id="searchfield" name="q" value="{SearchQuery}" placeholder="{text:Search Field Text}">
                         <input type="submit" id="searchbutton">
                     </form>
                 </li>                   
                 {block:PreviousPage}
-                    <li><a href="{PreviousPage}" title="Previous">&larr;</a></li>
+                    <li><a href="{PreviousPage}" title="Previous">Previous</a></li>
                 {/block:PreviousPage}
                     <li><a href="">{CurrentPage}</a></li>
                 {block:NextPage}
-                    <li><a href="{NextPage}" title="Next">&rarr;</a></li>
+                    <li><a href="{NextPage}" title="Next">Next</a></li>
                 {/block:NextPage}                               
             </ul>    
         {/block:Pagination}   
-        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>  
     </body>
 </html>
